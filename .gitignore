@@ -1,0 +1,11 @@
+__pycache__
+bindings
+local
+video
+.env
+*.pyc
+*.ipynb
+.DS_Store
+*.bat
+*.http
+.venv
