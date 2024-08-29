@@ -3,4 +3,4 @@ numpy
 pandas
 pydeck
 google-cloud-firestore
-./streamlit-1.9.0-py2.py3-none-any.whl
+streamlit==1.37.0

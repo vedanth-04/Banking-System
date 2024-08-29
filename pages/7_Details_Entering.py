@@ -1,5 +1,8 @@
 import streamlit as st
 from google.cloud import firestore
+from PIL import Image
+st.header("ADD YOUR EXPENSES")
+st.image(Image.open("Expense_photo.jpg"),width=600)
 def write_name_to_firestore(data):
     # Reference to the Firestore collection
     collection_ref = db.collection("Banking System")
@@ -9,12 +12,15 @@ def write_name_to_firestore(data):
         
     return f"Name written with document ID:"
 db = firestore.Client.from_service_account_json("firestone_key.json")
-expense_amt=st.text_input("Enter expsense amount",placeholder="Type here")
+expense_amt=st.text_input("Enter expsense amount($)",placeholder="Type here")
 expense_name=st.text_input("Enter expsense name",placeholder="Type here")
 expense_datee=st.date_input("Enter the date of the expense")
 expense_cateogry=st.selectbox("Enter the category",("Food","Clothing","Other"))
 expense_record={"Expense amount":expense_amt,"Expense Name":expense_name,"Expense Date":str(expense_datee),"Expense category":expense_cateogry}
 if st.button("Click to submit"):
-
     write_name_to_firestore(expense_record)
+    st.success("Your expense has been added!!")
+st.page_link(page="pages/8_Track_Expenses.py",label="Track expenses here")
+
+
 
