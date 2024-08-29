@@ -4,3 +4,4 @@ pandas
 pydeck
 google-cloud-firestore
 streamlit==1.37.0
+matplotlib
