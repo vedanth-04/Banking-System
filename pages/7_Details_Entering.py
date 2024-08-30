@@ -2,7 +2,7 @@ import streamlit as st
 from google.cloud import firestore
 from PIL import Image
 st.header("ADD YOUR EXPENSES")
-st.image(Image.open("Expense_photo.jpg"),width=600)
+st.image(Image.open("Expense_photo.jpg"),width=400)
 def write_name_to_firestore(data):
     # Reference to the Firestore collection
     collection_ref = db.collection("Banking System")
